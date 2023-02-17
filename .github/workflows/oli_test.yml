@@ -9,7 +9,14 @@ jobs:
   echo-job:
     runs-on: ubuntu-latest
     steps:
-      - name: echo-step
-        shell: bash
-        run: echo "Running step triggered by some push"
-
+      - uses: actions/checkout@v2
+      - name: Set output
+        id: vars
+        run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
+      - name: Check output
+        env:
+          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
+        run: |
+          echo $RELEASE_VERSION
+          echo ${{ steps.vars.outputs.tag }}
+          echo Alternative ${{github.ref_name}}
