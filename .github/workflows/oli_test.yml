@@ -1,0 +1,16 @@
+name: Oli test tag trigger
+
+on:
+  create:
+    master_branch: oseaman/JAN-11213-experiment
+    ref_type: tag
+    ref: olitest_*
+
+jobs:
+  echo-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo-step
+        shell: bash
+        run: echo "Running step triggered by tag"
+
