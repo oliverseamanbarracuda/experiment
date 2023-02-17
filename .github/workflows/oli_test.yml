@@ -1,9 +1,9 @@
-name: Oli test tag trigger 2
+name: Oli test tag trigger 3
 
 on:
   push:
       tags:
-        - olitest_*
+        - 'olitest_*'
 
 jobs:
   echo-job:
