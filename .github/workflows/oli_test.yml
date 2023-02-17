@@ -2,7 +2,6 @@ name: Oli test tag trigger
 
 on:
   create:
-    master_branch: oseaman/JAN-11213-experiment
     ref_type: tag
     ref: olitest_*
 
