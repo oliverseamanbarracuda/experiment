@@ -9,6 +9,6 @@ jobs:
   echo-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Check tag ${{github.ref_name}}        
+      - name: Check tag ${{github.ref_name}}   due to ${{ github.event_name }} 
         run: |
-          echo Alternative ${{github.ref_name}}
+          echo Tag ${{github.ref_name}} Event ${{ github.event_name }} 
