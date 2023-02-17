@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: echo-step
         shell: bash
-        run: echo "Running step triggered by tag"
+        run: echo "Running step triggered by tag2"
 
