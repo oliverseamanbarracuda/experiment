@@ -1,9 +1,9 @@
 name: Oli test tag trigger
 
 on:
-  create:
-    ref_type: tag
-    ref: olitest_*
+  push:
+      tags:
+        - olitest_*
 
 jobs:
   echo-job:
@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: echo-step
         shell: bash
-        run: echo "Running step triggered by some change"
+        run: echo "Running step triggered by some push"
 
