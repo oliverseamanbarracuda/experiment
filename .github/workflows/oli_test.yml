@@ -15,4 +15,6 @@ jobs:
         run: |
           echo Tag ${{github.ref_name}} Event ${{ github.event_name }} 
           echo Ref [${{github.event.ref}}]
+          suffix="-${{github.ref_name}}-" `date +'%Y-%m-%dT%H:%M:%S'`
           echo type ${{github.ref_type}}        
+          echo Image $suffix
