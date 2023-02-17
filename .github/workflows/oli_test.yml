@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check tag ${{github.ref_name}}   due to ${{ github.event_name }} Ref ${{github.event.ref}}
-        if: ${{ github.ref_type == "tag"}}
+        if: github.ref_type == 'tag'
         run: |
           echo Tag ${{github.ref_name}} Event ${{ github.event_name }} 
           echo Ref [${{github.event.ref}}]
